@@ -81,3 +81,4 @@ gem 'jp_prefecture'
 gem 'jquery-rails'
 
 gem 'whenever', require: false
+gem 'rails-i18n'

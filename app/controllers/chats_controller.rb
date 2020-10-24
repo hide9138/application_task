@@ -11,6 +11,7 @@ class ChatsController < ApplicationController
       @room.save
       UserRoom.create(user_id: current_user.id, room_id: @room.id)
       UserRoom.create(user_id: @user.id, room_id: @room.id)
+      @chats
     else
       @room = user_rooms.room
       @chats = @room.chats
