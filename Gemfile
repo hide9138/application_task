@@ -80,5 +80,9 @@ gem 'dotenv-rails'
 gem 'jp_prefecture'
 gem 'jquery-rails'
 
-gem 'whenever', require: false
 gem 'rails-i18n'
+gem 'whenever', require: false
+
+group :production do
+  gem 'mysql2'
+end
