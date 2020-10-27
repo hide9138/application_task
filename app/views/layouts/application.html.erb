@@ -12,11 +12,11 @@
 
 <body>
     <!--ヘッダーの記述-->
-    <<header class="navbar navbar-fixed-top navbar-inverse">
+    <header class="navbar navbar-fixed-top navbar-inverse">
         <div class="container">
 
             <nav class="nav navbar-nav navbar-left">
-                <span>Bookers</span>
+                <span>Bookers_test</span>
             </nav>
             <nav>
                 <ul class="nav navbar-nav navbar-right">
@@ -35,28 +35,28 @@
             </nav>
 
         </div>
-        </header>
+    </header>
 
-        <% if user_signed_in? %>
-        <div class="search-form" style="text-align: center;">
-            <p>検索</p>
-            <%= form_tag(search_path, method: :get ) do %>
-            <%= text_field_tag 'search[content]' %>
-            <%= select_tag 'search[model]', options_for_select({ "User" => "user", "Book" => "book" }) %>
-            <%= select_tag 'search[method]', options_for_select({ "完全一致" => "perfect", "前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partial" }) %>
-            <%= submit_tag 'Search' %>
-            <% end %>
-        </div>
+    <% if user_signed_in? %>
+    <div class="search-form" style="text-align: center;">
+        <p>検索</p>
+        <%= form_tag(search_path, method: :get ) do %>
+        <%= text_field_tag 'search[content]' %>
+        <%= select_tag 'search[model]', options_for_select({ "User" => "user", "Book" => "book" }) %>
+        <%= select_tag 'search[method]', options_for_select({ "完全一致" => "perfect", "前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partial" }) %>
+        <%= submit_tag 'Search' %>
         <% end %>
+    </div>
+    <% end %>
 
-        <div class="container">
-            <p id="notice" class="text-success"><%= notice %></p>
-            <!--デバイスでnotice設定されているので呼び出してるだけ-->
+    <div class="container">
+        <p id="notice" class="text-success"><%= notice %></p>
+        <!--デバイスでnotice設定されているので呼び出してるだけ-->
 
 
-            <%= yield %>
-            <footer class="text-right">CopyRight Infratop.inc</footer>
-        </div>
+        <%= yield %>
+        <footer class="text-right">CopyRight Infratop.inc</footer>
+    </div>
 </body>
 
 </html>
